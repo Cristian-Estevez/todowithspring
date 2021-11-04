@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="1a857e3e-fc0a-4fe4-9a16-55afca2a0204" name="ensolvers" url="jdbc:mysql://localhost:3306/ensolvers?useSSL=false" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+estevezcristian/todowithspring/TodowithspringApplication.class
+estevezcristian/todowithspring/controller/FolderController.class
+estevezcristian/todowithspring/models/Folder.class
+estevezcristian/todowithspring/models/Task.class
+estevezcristian/todowithspring/dao/TaskDaoImpl.class
+estevezcristian/todowithspring/dao/FolderDaoImpl.class
+estevezcristian/todowithspring/ServletInitializer.class
+estevezcristian/todowithspring/controller/TaskController.class
+estevezcristian/todowithspring/dao/TaskDao.class
+estevezcristian/todowithspring/dao/FolderDao.class
