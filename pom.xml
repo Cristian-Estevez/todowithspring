@@ -11,7 +11,7 @@
 	<groupId>estevezcristian</groupId>
 	<artifactId>todowithspring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>todowithspring</name>
 	<description>Back end for to-do list with spring boot and java</description>
 	<properties>
