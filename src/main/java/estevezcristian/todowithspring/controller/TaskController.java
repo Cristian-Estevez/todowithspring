@@ -16,6 +16,7 @@ public class TaskController {
     @Autowired
     private TaskDao taskDao;
 
+    @CrossOrigin
     @RequestMapping(value = "/api/folder/{id}/task-list/")
     public List<Task> getTasks(@PathVariable Long id) {
         return taskDao.getTasks(id);
