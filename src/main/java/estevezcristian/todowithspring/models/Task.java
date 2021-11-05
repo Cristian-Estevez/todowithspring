@@ -20,9 +20,9 @@ public class Task {
     @Getter @Setter @Column(name = "title")
     private String title;
 
-    @Column(name = "completed", nullable = false, columnDefinition = "TINYINT(1)")
+    @Column(name = "completed", nullable = false, columnDefinition = "BOOLEAN")
     @Getter @Setter
-    private Boolean completed;
+    private Boolean completed = false;
 
     @ManyToOne
     @Getter @Setter

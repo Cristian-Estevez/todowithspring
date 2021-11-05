@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +19,10 @@ public class TaskDaoImpl implements TaskDao{
 
     @Override
     public List<Task> getTasks(Long id) {
-        TypedQuery<Task> query = entityManager.createQuery("SELECT t FROM Task t WHERE folder = :id", Task.class);
-        String stringId = id.toString();
-        List<Task> tasksById = query.setParameter("id", stringId)
+        List<Task> tasksById = entityManager.createQuery(
+                "SELECT t FROM Task t WHERE folder = '" + id + "'", Task.class)
                 .getResultList();
+        System.out.println("tasks by id is : " + tasksById);
         return tasksById;
     }
 
