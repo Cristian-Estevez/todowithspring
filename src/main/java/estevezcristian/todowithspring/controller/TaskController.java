@@ -18,6 +18,7 @@ public class TaskController {
 
     @RequestMapping(value = "/api/folder/{id}/task-list/")
     public List<Task> getTasks(@PathVariable Long id) {
+        System.out.println("Got to getTasks");
         return taskDao.getTasks(id);
     }
 
