@@ -22,6 +22,7 @@ public class TaskDaoImpl implements TaskDao{
         List<Task> tasksById = entityManager.createQuery(
                 "SELECT t FROM Task t WHERE folder = " + id, Task.class)
                 .getResultList();
+        System.out.println("tasks by id is : " + tasksById);
         return tasksById;
     }
 
