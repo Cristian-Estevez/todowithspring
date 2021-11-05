@@ -11,7 +11,7 @@
 	<groupId>estevezcristian</groupId>
 	<artifactId>todowithspring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>todowithspring</name>
 	<description>Back end for to-do list with spring boot and java</description>
 	<properties>
@@ -75,6 +75,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>3.0.3</version>
 			</plugin>
 		</plugins>
 	</build>
