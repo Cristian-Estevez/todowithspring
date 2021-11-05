@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +20,11 @@ public class TaskDaoImpl implements TaskDao{
 
     @Override
     public List<Task> getTasks(Long id) {
+        Folder folder = entityManager.find(Folder.class, id);
         List<Task> tasksById = entityManager.createQuery(
-                "SELECT t FROM Task t WHERE folder = '" + id + "'", Task.class)
+                        "SELECT t FROM Task t WHERE t.folder = :id", Task.class)
+                .setParameter("id", folder)
                 .getResultList();
-        System.out.println("tasks by id is : " + tasksById);
         return tasksById;
     }
 
@@ -34,6 +36,12 @@ public class TaskDaoImpl implements TaskDao{
 
     @Override
     public void updateTask(Task task) {
+        Task tempTask = entityManager.find(Task.class, task.getId());
+        tempTask.setTitle(task.getTitle());
+    }
+
+    @Override
+    public void markUnmarkTask(Task task) {
         Task tempTask = entityManager.find(Task.class, task.getId());
         if (tempTask.getCompleted() == false){
             tempTask.setCompleted(true);

@@ -21,7 +21,6 @@ public class TaskController {
         return taskDao.getTasks(id);
     }
 
-
     @RequestMapping(value = "/api/folder/{folderId}/task-update/{taskId}/", method = RequestMethod.POST, consumes="application/json")
     public void updateTask(@RequestBody Task task){
         taskDao.updateTask(task);
@@ -30,6 +29,11 @@ public class TaskController {
     @RequestMapping(value = "/api/folder/{folderId}/task-delete/{taskId}/", method = RequestMethod.DELETE)
     public void deleteTask(@PathVariable Long folderId, @PathVariable Long taskId){
         taskDao.deleteTask(taskId);
+    }
+
+    @RequestMapping(value = "/api/folder/{folderId}/task-update/{taskId}/m-u/", method = RequestMethod.POST, consumes="application/json")
+    public void markUnmarkTask(@RequestBody Task task) {
+        taskDao.markUnmarkTask(task);
     }
 
     @RequestMapping(value = "/api/folder/{folderId}/task-create/", method = RequestMethod.POST, consumes="application/json")

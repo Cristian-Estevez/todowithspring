@@ -18,6 +18,7 @@ public class Folder {
     @Getter @Setter @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Getter @Setter @Column(name = "name")
     private String name;
 
